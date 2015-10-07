@@ -25,6 +25,25 @@
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.rental_date
+    
+  - dimension: is_late
+    type: yesno
+    sql: |
+      CASE 
+        WHEN ${TABLE}.return_date IS NULL AND date_add(${TABLE}.rental_date, INTERVAL 14 DAY) > curdate() THEN 0
+        WHEN ${TABLE}.return_date IS NULL AND date_add(${TABLE}.rental_date, INTERVAL 14 DAY) <= curdate() THEN 1
+      END
+    
+  - dimension: is_returned
+    type: yesno
+    sql: coalesce(${return_date}, 0)
+
+# This is a derived date based on the rental date
+  - dimension_group: due_date
+    description: 'This is automatically 2 weeks beyond the rental date'
+    type: time
+    timeframes: [time, date, week, month, day_of_week_index] 
+    sql: date_add(${TABLE}.rental_date, INTERVAL 14 DAY)
 
   - dimension_group: return
     type: time
