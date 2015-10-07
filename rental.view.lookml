@@ -59,7 +59,18 @@
     type: count
     drill_fields: detail*
 
+  - measure: late_count
+    type: count_distinct
+    sql: rental_id
+    sql: ${rental_id}
+    filters:
+      is_late: yes    
 
+  - measure: late_percentage
+    type: number
+    decimals: 2
+    sql: (${late_count}*100.0)/nullif(${count},0)
+    value_format: '#.0\%'
   # ----- Sets of fields for drilling ------
   sets:
     detail:
