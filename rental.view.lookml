@@ -25,6 +25,11 @@
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.rental_date
+  
+  - dimension_group: return
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.return_date
     
   - dimension: is_late
     type: yesno
@@ -45,11 +50,6 @@
     timeframes: [time, date, week, month, day_of_week_index] 
     sql: date_add(${TABLE}.rental_date, INTERVAL 14 DAY)
 
-  - dimension_group: return
-    type: time
-    timeframes: [time, date, week, month]
-    sql: ${TABLE}.return_date
-
   - dimension: staff_id
     type: yesno
     # hidden: true
@@ -61,7 +61,6 @@
 
   - measure: late_count
     type: count_distinct
-    sql: rental_id
     sql: ${rental_id}
     filters:
       is_late: yes    
