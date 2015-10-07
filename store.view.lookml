@@ -3,7 +3,7 @@
 
   - dimension: store_id
     primary_key: true
-    type: yesno
+    type: number
     sql: ${TABLE}.store_id
 
   - dimension: address_id
