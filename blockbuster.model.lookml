@@ -210,6 +210,16 @@
       type: left_outer
       sql_on: ${film.language_id} = ${language.language_id}
       relationship: many_to_one
+      
+    - join: film_category
+      type: inner
+      sql_on: ${film.film_id} = ${film_category.film_id}
+      relationship: many_to_many
+      
+    - join: category
+      type: inner
+      relationship: many_to_one
+      sql_on: ${category.category_id} = ${film_category.category_id}
 
 
 # - explore: rental

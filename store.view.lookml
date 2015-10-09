@@ -6,6 +6,16 @@
     type: number
     sql: ${TABLE}.store_id
 
+#Verify the store ID vs name casing with Bob    
+  - dimension: store_name
+    type: string
+    sql: |
+      CASE 
+        WHEN ${store_id} = 1 THEN 'Westcoast'
+        WHEN ${store_id} = 2 THEN 'Eastcoast'
+        ELSE 'Unknown'
+      END
+
   - dimension: address_id
     type: int
     # hidden: true

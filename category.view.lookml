@@ -3,7 +3,7 @@
 
   - dimension: category_id
     primary_key: true
-    type: yesno
+    type: number
     sql: ${TABLE}.category_id
 
   - dimension_group: last_update
