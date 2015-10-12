@@ -1,4 +1,5 @@
 - view: rental
+  sql_table_name: rental
   fields:
 
   - dimension: rental_id
@@ -23,7 +24,7 @@
 
   - dimension_group: rental
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [time, date, week, month, day_of_week]
     sql: ${TABLE}.rental_date
   
   - dimension_group: return

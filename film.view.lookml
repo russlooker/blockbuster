@@ -41,11 +41,15 @@
 
   - dimension: rental_rate
     type: number
+    decimals: 2
     sql: ${TABLE}.rental_rate
+    value_format: '$##0.00'
 
   - dimension: replacement_cost
     type: number
+    decimals: 2
     sql: ${TABLE}.replacement_cost
+    value_format: '$##0.00'
 
   - dimension: special_features
     sql: ${TABLE}.special_features
