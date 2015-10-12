@@ -35,6 +35,10 @@
     # hidden: true
     sql: ${TABLE}.staff_id
 
+  - measure: total_amount
+    type: sum
+    sql: ${amount}
+
   - measure: count
     type: count
     drill_fields: detail*
