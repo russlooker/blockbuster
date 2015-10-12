@@ -38,7 +38,7 @@
         ${rental.inventory_id} = ${inventory_id}
         )
 
-  - measure: total_revenue
+  - measure: possible_revenue_by_rental_rate
     type: sum
     decimals: 2
     sql: ${total_times_rented} * ${film.rental_rate}
@@ -52,7 +52,7 @@
   - measure: percent_older_than_10_years
     type: number
     decimals: 2
-    sql: ${count_older_than_10}*1.0/${total_revenue}
+    sql: ${count_older_than_10}*1.0/${count}
     value_format: '#0.00%'
 
   - dimension: number_of_rentals_tier

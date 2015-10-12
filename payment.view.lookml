@@ -35,9 +35,10 @@
     # hidden: true
     sql: ${TABLE}.staff_id
 
-  - measure: total_amount
+  - measure: total_revenue
     type: sum
     sql: ${amount}
+    value_format: '$#,##0.00'
 
   - measure: count
     type: count
