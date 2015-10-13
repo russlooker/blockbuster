@@ -25,7 +25,8 @@
         
   - dimension: time_in_inventory
     type: number
-    sql: DATEDIFF(${entered_circulation_date}, curdate())*1.0/365
+    sql: DATEDIFF(curdate(), ${entered_circulation_date})*1.0/365
+    value_format: '###0.00'
     
   - dimension: total_times_rented
     type: int
