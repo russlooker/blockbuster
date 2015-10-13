@@ -221,6 +221,7 @@
       relationship: many_to_one
       sql_on: ${category.category_id} = ${film_category.category_id}
 
+- explore: customer_cohorting
 
 # - explore: rental
 #   joins:
