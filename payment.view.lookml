@@ -39,6 +39,7 @@
     type: sum
     sql: ${amount}
     value_format: '$#,##0.00'
+    drill_fields: [payment_month, total_revenue]
 
   - measure: count
     type: count

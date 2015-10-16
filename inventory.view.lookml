@@ -55,6 +55,7 @@
     decimals: 2
     sql: ${count_older_than_10}*1.0/${count}
     value_format: '#0.00%'
+    drill_fields: [time_in_inventory, count]
 
   - dimension: number_of_rentals_tier
     type: tier

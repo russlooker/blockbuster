@@ -15,6 +15,10 @@
         WHEN ${store_id} = 2 THEN 'Eastcoast'
         ELSE 'Unknown'
       END
+    html: |
+      {{ linked_value }}
+      <a href="/dashboards/95?Store%20Name={{ value | encode_uri }}" target="_new">
+      <img src="/images/qr-graph-line@2x.png" height=20 width=20></a>
 
   - dimension: address_id
     type: int
