@@ -3,7 +3,7 @@
 
   - dimension: film_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.film_id
 
   - dimension: description
@@ -41,15 +41,13 @@
 
   - dimension: rental_rate
     type: number
-    decimals: 2
     sql: ${TABLE}.rental_rate
-    value_format: '$##0.00'
+    value_format_name: usd
 
   - dimension: replacement_cost
     type: number
-    decimals: 2
     sql: ${TABLE}.replacement_cost
-    value_format: '$##0.00'
+    value_format_name: usd
 
   - dimension: special_features
     sql: ${TABLE}.special_features

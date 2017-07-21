@@ -3,7 +3,7 @@
 
   - dimension: country_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.country_id
 
   - dimension: country

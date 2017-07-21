@@ -11,7 +11,7 @@
     sql: ${TABLE}.active
 
   - dimension: address_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.address_id
 

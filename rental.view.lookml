@@ -4,16 +4,16 @@
 
   - dimension: rental_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.rental_id
 
   - dimension: customer_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.customer_id
 
   - dimension: inventory_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.inventory_id
 
@@ -68,9 +68,9 @@
 
   - measure: late_percentage
     type: number
-    decimals: 2
     sql: (${late_count}*100.0)/nullif(${count},0)
-    value_format: '#.0\%'
+    value_format_name: percent_1
+    
   # ----- Sets of fields for drilling ------
   sets:
     detail:

@@ -3,14 +3,14 @@
 
   - dimension: city_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.city_id
 
   - dimension: city
     sql: ${TABLE}.city
 
   - dimension: country_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.country_id
 

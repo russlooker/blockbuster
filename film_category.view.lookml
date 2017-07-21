@@ -7,7 +7,7 @@
     sql: ${TABLE}.category_id
 
   - dimension: film_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.film_id
 

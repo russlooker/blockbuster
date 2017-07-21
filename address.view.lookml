@@ -3,7 +3,7 @@
 
   - dimension: address_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.address_id
 
   - dimension: address
@@ -13,7 +13,7 @@
     sql: ${TABLE}.address2
 
   - dimension: city_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.city_id
 

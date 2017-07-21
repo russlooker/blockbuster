@@ -3,11 +3,11 @@
 
   - dimension: inventory_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.inventory_id
 
   - dimension: film_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.film_id
     
@@ -29,7 +29,7 @@
     value_format: '###0.00'
     
   - dimension: total_times_rented
-    type: int
+    type: number
     sql: |
         (
         SELECT COUNT(*)
@@ -41,9 +41,8 @@
 
   - measure: possible_revenue_by_rental_rate
     type: sum
-    decimals: 2
     sql: ${total_times_rented} * ${film.rental_rate}
-    value_format: '$#,##0.00'
+    value_format_name: usd
     
   - measure: count_older_than_10
     type: count
@@ -52,9 +51,8 @@
   
   - measure: percent_older_than_10_years
     type: number
-    decimals: 2
     sql: ${count_older_than_10}*1.0/${count}
-    value_format: '#0.00%'
+    value_format_name: percent_2
     drill_fields: [time_in_inventory, count]
 
   - dimension: number_of_rentals_tier
@@ -69,7 +67,7 @@
     sql: ${TABLE}.last_update
 
   - dimension: store_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.store_id
 

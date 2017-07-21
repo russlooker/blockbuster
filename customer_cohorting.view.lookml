@@ -100,7 +100,7 @@
     drill_fields: detail*
 
   - dimension: customer_id
-    type: int
+    type: number
     sql: ${TABLE}.customer_id
 
   - dimension_group: first_rental
@@ -114,7 +114,7 @@
     sql: ${TABLE}.activity_month
   
   - dimension: count_of_rentals
-    type: int
+    type: number
     sql: ${TABLE}.count_of_rentals
   
   - dimension: is_active
@@ -135,16 +135,15 @@
 
   - measure: percent_of_cohort_active
     type: number
-    decimals: 2
     sql:  (${count_inactive}*1.0)/nullif(${count_total_users},0)
-    value_format: '#0.0%'
+    value_format_name: percent_2
     drill_fields: detail*
 
   - dimension: months_since_signup
-    type: int
-    decimals: 2
+    type: number
+    value_format_name: 
     sql: round(datediff(${activity_month_date}, ${first_rental_date})/30.0,0)
-    value_format: '##0'
+    value_format_name: decimal_0
     
   sets:
     detail:

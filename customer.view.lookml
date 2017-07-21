@@ -3,7 +3,7 @@
 
   - dimension: customer_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.customer_id
 
   - dimension: active
@@ -11,7 +11,7 @@
     sql: ${TABLE}.active
 
   - dimension: address_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.address_id
 

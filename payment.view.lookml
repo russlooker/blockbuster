@@ -3,7 +3,7 @@
 
   - dimension: payment_id
     primary_key: true
-    type: int
+    type: number
     sql: ${TABLE}.payment_id
 
   - dimension: amount
@@ -11,7 +11,7 @@
     sql: ${TABLE}.amount
 
   - dimension: customer_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.customer_id
 
@@ -26,7 +26,7 @@
     sql: ${TABLE}.payment_date
 
   - dimension: rental_id
-    type: int
+    type: number
     # hidden: true
     sql: ${TABLE}.rental_id
 
